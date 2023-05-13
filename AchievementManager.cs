@@ -23,10 +23,12 @@ public class AchievementManager : MonoBehaviour
         }
 
         achievements = new Dictionary<string, Achievement>();
-        achievements.Add("Teleport", new Achievement("Teleport Unlocked!", achievementTMP));
+        achievements.Add("Teleport", new Achievement("Teleport Discovered!", achievementTMP));
+        achievements.Add("SpeedPad", new Achievement("Speed Pad Discovered!", achievementTMP));
+        achievements.Add("JumpPad", new Achievement("Jump Pad Discovered!", achievementTMP));
     }
 
-    public IEnumerator UnlockAndShowAchievement(Achievement achievement, TextMeshProUGUI achievementTMP)
+    public IEnumerator ShowAchievement(Achievement achievement, TextMeshProUGUI achievementTMP)
     {
         achievementTMP.text = "Achievement Unlocked - " + achievement.achievementName;
         achievementTMP.gameObject.SetActive(true);
